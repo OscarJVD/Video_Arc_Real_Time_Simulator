@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  /* background-color: rgb(4, 4, 134); */
+  background-color: black;
+}
+
+.blueHover{
+  background-color: #2274f8 !important;
+  outline: 3px solid white;
+  opacity: 1 !important;
+}
+
+.videoIA{
+  position: fixed;
+   overflow: hidden;
+    padding: 0;
+   margin: 0; 
+   top: 0 !important;
+}
+
+.btns-ia {
+  padding: 1rem 1.5rem;
+  font-size: 1.75rem;
+}
+
+.bg-dark-blue {
+  background-color: #5694f8;
+}
+
+.text-link {
+  color: #027EB5 !important;
+}
+
+.btn-ia {
+  background-color: #A4B6DA;
+  color: white;
+}
+
+.bg-dark-blue:hover {
+  background-color: #2274f8 !important;
+  /* color: white; */
+}
+
+.bg-dark-blue:active {
+  background-color: #0060fa !important;
+  /* color: white; */
+}
+
+.btn-rounded {
+  border-radius: 47px;
+}
+
+.btn-light-blue {
+  outline: 3px solid white;
+  /* -webkit-box-shadow: 2px 2px 19px 6px #0968E4;
+  box-shadow: 2px 2px 19px 6px #0968E4; */
+}
+
+.btn-neon-blue {
+  outline: 3px solid #074391;
+  -webkit-box-shadow: 2px 2px 19px 6px #0968E4;
+  box-shadow: 2px 2px 19px 6px #0968E4;
+}
+
+.zIndexCien {
+  z-index: 100;
+}
+
+.zIndexNueveMilCien {
+  z-index: 9100;
+}
+
+.buttonsBox {
+  height: 29% !important;
+  width: 100%;
+  position: absolute;
+  bottom: 0 !important;
+  background: black !important;
+}
+
+video {
+  height: 71%;
+}
+
+.videoMsg {
+  position: absolute;
+  z-index: 10;
+  top: 48%;
+  height: 70px;
+}
+
+.btnResetIA {
+  position: absolute;
+  z-index: 10000;
+  top: 5% !important;
+  right: 5% !important;
+  text-align: right;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  opacity: 0.55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnResetIA:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.btnVideoCenter {
+  position: relative;
+  z-index: 9000;
+  top: 50%;
+  text-align: center;
+  transition: ease-in-out;
+  -webkit-transition: ease-in-out;
+  -moz-transition: ease-in-out;
+  -ms-transition: ease-in-out;
+  -o-transition: ease-in-out;
+}
+
+.spanVideoMsg {
+  color: white;
+  font-size: 25px;
+}
+
+#btnActiveRecognizer {
+  width: 150px;
+  /* height: 100px; */
+  height: 151px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9000;
+  /* right: 27rem; */
+  /* top: 2.9rem; */
+  top: 23.7%;
+}
+
+#circleSpectrum {
+  position: relative;
+  /* right: 22.4rem; */
+}
+
+.audioViewer {
+  position: absolute;
+  z-index: 20;
+  top: 13.2%;
+}
+
+.border-fw-black {
+  text-shadow: 0 0 5px #000;
+}
+
+.border-fw-white {
+  text-shadow: 0 0 5px white;
+}
+
+.text-lime {
+  color: rgb(70, 238, 70);
+}
+
+.bg-opaco {
+  /* background-color: #353535ec; */
+  background-color: #ffffff3d;
+  color: white;
+  /* color: #ddd; */
+  /* WHITE OR #ddd */
+  opacity: 1;
+  border-radius: 7px;
+  /* box-shadow: 0 0 9px 0 #000; */
+}
+
+
+/* LOADERS */
+[class*=loader-] {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.loader-03 {
+  color: white;
+  border: 0.8em solid currentcolor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: 1s loader-03 linear infinite;
+  animation: 1s loader-03 linear infinite;
+  position: relative;
+}
+
+@-webkit-keyframes loader-03 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-03 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-08 {
+  position: relative;
+  color: white;
+}
+
+.loader-08:before, .loader-08:after {
+  content: "";
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: currentcolor;
+  opacity: 0.6;
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  -webkit-animation: loader-08 2s infinite ease-in-out;
+  animation: loader-08 2s infinite ease-in-out;
+}
+
+.loader-08:after {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes loader-08 {
+  0%, 100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loader-08 {
+  0%, 100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}

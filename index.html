@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/ia.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<body id="cuerpo">
+
+  <!-- ------------ VIDEOS ------------- -->
+  <!-- REPOSO -->
+  <video class="videoIA" src="./media/videos/chica/11.IDLE/IDLE.mp4" muted autoplay preload="metadata" loop width="100%" id="reposoTrack">
+    Tu navegador no soporta HTML5 video.
+  </video>
+  <!-- END REPOSO -->
+
+  <!-- LIPSYNC UNIVERSAL VIDEOS -->
+  <video class="videoIA d-none" src="./media/videos/video_todos_los_visemas.mp4" muted paused preload="metadata" loop width="100%" id="universalLipSyncTrack">
+    Tu navegador no soporta HTML5 video.
+  </video>
+
+  <!-- <video class="videoIA d-none" src="./media/videos/video_abrir_y_cerrar_boca.mp4" muted paused preload="metadata" loop width="100%" id="universalLipSyncTrack">
+    Tu navegador no soporta HTML5 video.
+  </video> -->
+
+  <!-- <video class="videoIA d-none" src="./media/videos/video_abrir_y_cerrar_boca_menos_abierta.mp4" muted paused preload="metadata" loop width="100%" id="universalLipSyncTrack">
+    Tu navegador no soporta HTML5 video.
+  </video> -->
+  <!-- END LIPSYNC UNIVERSAL VIDEOS -->
+
+  <!-- --------- END VIDEOS ---------- -->
+
+  <!-- -------- ESPECTRO ------------ -->
+  <canvas id="waves" class="audioViewer" style="overflow: hidden;"></canvas>
+  <!-- -------- END ESPECTRO ------------ -->
+
+  <!-- -------- TEXTO RECONOCIDO ------------ -->
+  <div class="container-fluid videoMsg d-none p-3 justify-content-center d-flex align-items-center text-center bg-opaco" id="recognizedTxtCaption">
+    <span class="spanVideoMsg text-center" id="spanRecognizedTxtCaption">
+      Contesta y al final menciona la palabra 'ahora'
+    </span>
+  </div>
+  <!-- -------- END TEXTO RECONOCIDO ------------ -->
+
+  <!-- -------- BOTÓN PARA HABLAR ------------ -->
+  <div class="container-fluid btnVideoCenter justify-content-center text-center align-items-center d-flex" id="talkBtnBox">
+
+    <img src="./media/gifts/negro_coloreado.gif" id="circleSpectrum" alt="" width="385px">
+
+    <button id="btnActiveRecognizer" class="btn  shadow border border-white" style="cursor: pointer;">
+      <!-- <span class="text-white  p-1 border-fw-black">
+        Probar
+      </span> -->
+      <!-- <div class="loader-03 d-none" id="btnTalkLoader"></div> -->
+      <!-- <i class="fas fa-microphone text-white fa-4x p-1 border-fw-black" id="microphoneIcon"></i> -->
+      <img src="./media/icons/lips_color.png" id="microphoneIcon" alt="" width="100px">
+      <!-- <a href="https://www.flaticon.com/free-icons/lips" title="lips icons"></a> -->
+      <!-- <i class="fas fa-lip text-white fa-4x p-1 border-fw-black" id="microphoneIcon"></i> -->
+    </button>
+  </div>
+  <!-- -------- END BOTÓN PARA HABLAR ------------ -->
+
+  <!-- <button id="btn" class="position-absolute">Allow Voice Synthesis</button> -->
+  <script src="./artyom.window.min.js"></script>
+
+  <script>
+    let Arc = new Artyom();
+
+    document.getElementById("btnActiveRecognizer").addEventListener("click", function() {
+      Arc.say("Puede que la tarea que me he impuesto de escribir una historia completa del pueblo romano desde el comienzo mismo de su existencia me recompense por el trabajo invertido en ella, no lo sé con certeza, ni creo que pueda aventurarlo. Porque veo que esta es una práctica común y antiguamente establecida, cada nuevo escritor está siempre persuadido de que ni lograrán mayor certidumbre en las materias de su narración, ni superarán la rudeza de la antigüedad en la excelencia de su estilo.", {
+        lang: "es-ES",
+        onStart: async function() {
+          document.getElementById("reposoTrack").classList.add('d-none')
+          document.getElementById("universalLipSyncTrack").classList.remove('d-none')
+          await document.getElementById("universalLipSyncTrack").play()
+        },
+        onEnd: function() {
+          document.getElementById("reposoTrack").classList.remove('d-none')
+          document.getElementById("universalLipSyncTrack").pause()
+          document.getElementById("universalLipSyncTrack").classList.add('d-none')
+          console.log("El texto ha sido leido");
+        }
+      });
+
+      console.log(Arc.getVoices())
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
